@@ -1,0 +1,97 @@
+# Re-running the code to create the updated resume with unique design, color, and image since the previous session expired.
+
+from fpdf import FPDF
+
+# Create a new PDF document with unique design and colors
+pdf = FPDF()
+
+# Add a page
+pdf.add_page()
+
+# Add background color (for header section) by creating a colored rectangle
+pdf.set_fill_color(0, 102, 204)  # Blue color for the header
+pdf.rect(0, 0, 210, 40, 'F')  # Full width of A4 page
+
+# Set a custom title with white font for contrast
+pdf.set_font('Arial', 'B', 24)
+pdf.set_text_color(255, 255, 255)  # White color for the text
+pdf.cell(200, 20, 'Amit Kumar', ln=True, align='C')
+
+# Contact Information in white
+pdf.set_font('Arial', 'I', 12)
+pdf.ln(5)
+pdf.cell(200, 10, 'Vpo: Thirpalli bari, Teh: Rajgarh, Distt: Churu 331305', ln=True, align='C')
+pdf.cell(200, 10, 'Phone: 6379695714 | Email: Hkrishan5344@gmail.com', ln=True, align='C')
+
+# Add the image (profile picture) at the top right corner
+pdf.image('/mnt/data/a.jpg', 160, 10, 30)  # Adjust the size and position of the image
+
+# Objective section with horizontal line and blue text for header
+pdf.ln(20)
+pdf.set_text_color(0, 102, 204)  # Blue color for headers
+pdf.set_font('Arial', 'B', 14)
+pdf.cell(0, 10, 'Objective', ln=True)
+pdf.line(10, 60, 200, 60)  # Horizontal line to separate the section
+pdf.set_text_color(0, 0, 0)  # Reset text color to black
+pdf.set_font('Arial', '', 12)
+pdf.multi_cell(0, 10, "I am a dedicated and detail-oriented professional with experience in managing flooring operations, seeking a full-time position where I can utilize my skills in project management and operational efficiency to contribute to the growth and success of your organization.")
+
+# Core Competencies section (new addition for uniqueness) with blue headers
+pdf.ln(10)
+pdf.set_text_color(0, 102, 204)
+pdf.set_font('Arial', 'B', 14)
+pdf.cell(0, 10, 'Core Competencies', ln=True)
+pdf.line(10, 100, 200, 100)  # Another separator line
+pdf.set_text_color(0, 0, 0)
+pdf.set_font('Arial', '', 12)
+pdf.multi_cell(0, 10, "• Project Management\n• Operational Efficiency\n• Team Collaboration\n• Customer Service Excellence")
+
+# Experience section
+pdf.ln(10)
+pdf.set_text_color(0, 102, 204)
+pdf.set_font('Arial', 'B', 14)
+pdf.cell(200, 10, 'Experience', ln=True)
+pdf.line(10, 130, 200, 130)
+pdf.set_text_color(0, 0, 0)
+pdf.set_font('Arial', '', 12)
+pdf.cell(200, 10, 'Flooring InCharge, Bestseller', ln=True)
+pdf.set_font('Arial', 'I', 12)
+pdf.cell(200, 10, '01-12-2023 to 01-07-2024', ln=True)
+
+# Education section
+pdf.ln(10)
+pdf.set_text_color(0, 102, 204)
+pdf.set_font('Arial', 'B', 14)
+pdf.cell(200, 10, 'Education', ln=True)
+pdf.line(10, 160, 200, 160)
+pdf.set_text_color(0, 0, 0)
+pdf.set_font('Arial', '', 12)
+pdf.cell(200, 10, 'RBSE Ajmer (2019): 10th, 61.00%', ln=True)
+pdf.cell(200, 10, 'RBSE Ajmer (2021): 12th, 86.00%', ln=True)
+pdf.cell(200, 10, 'Telly (2023): 70.00%', ln=True)
+
+# Activities section
+pdf.ln(10)
+pdf.set_text_color(0, 102, 204)
+pdf.set_font('Arial', 'B', 14)
+pdf.cell(200, 10, 'Activities', ln=True)
+pdf.line(10, 190, 200, 190)
+pdf.set_text_color(0, 0, 0)
+pdf.set_font('Arial', '', 12)
+pdf.cell(200, 10, 'Farming Activities', ln=True)
+
+# Languages section
+pdf.ln(10)
+pdf.set_text_color(0, 102, 204)
+pdf.set_font('Arial', 'B', 14)
+pdf.cell(200, 10, 'Languages', ln=True)
+pdf.line(10, 210, 200, 210)
+pdf.set_text_color(0, 0, 0)
+pdf.set_font('Arial', '', 12)
+pdf.cell(200, 10, 'Hindi, English', ln=True)
+
+# Save the PDF with the unique design
+pdf_output_path_unique_color = '/mnt/data/amit_kumar_resume_unique_color.pdf'
+pdf.output(pdf_output_path_unique_color)
+
+pdf_output_path_unique_color
